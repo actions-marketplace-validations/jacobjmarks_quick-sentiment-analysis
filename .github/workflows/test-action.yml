@@ -18,7 +18,7 @@ jobs:
         id: analyze-sentiment
         uses: ./
         with:
-          text: "I really love this action! :heart_eyes:"
+          text: "I really love this action! 😍"
       - name: Get analysis result
         run: echo '${{ steps.analyze-sentiment.outputs.result }}'
 
@@ -31,6 +31,6 @@ jobs:
         id: analyze-sentiment
         uses: ./
         with:
-          text: "This actions sucks! :vomiting_face:"
+          text: "This actions sucks! 🤮"
       - name: Get analysis result
         run: echo '${{ steps.analyze-sentiment.outputs.result }}'
