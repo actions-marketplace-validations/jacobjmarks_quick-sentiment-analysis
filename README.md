@@ -12,12 +12,46 @@ Text to analyze
 
 ### `result`
 
-Sentiment analysise results. Example: `{ "score": 0.12, ... }`
+Sentiment analysis results.
+
+Result is formatted as JSON. Example:
+
+``` json
+{
+    "score": 1,
+    "comparative": 0.1111111111111111,
+    "calculation": [ { "allergic": -2 }, { "love": 3 } ],
+    "tokens": [
+        "i",
+        "love",
+        "cats",
+        "but",
+        "i",
+        "am",
+        "allergic",
+        "to",
+        "them"
+    ],
+    "words": [
+        "allergic",
+        "love"
+    ],
+    "positive": [
+        "love"
+    ],
+    "negative": [
+        "allergic"
+    ]
+}
+```
 
 ## Example usage
 
 ``` yaml
 - uses: jacobjmarks/gha-javascript-action@v1.0.0
+  id: sentiment-analysis
   with:
-    text: 'I really love this action!'
+    text: "I love cats, but I am allergic to them."
+
+- run: echo '${{ steps.sentiment-analysis.outputs.result }}'
 ```
