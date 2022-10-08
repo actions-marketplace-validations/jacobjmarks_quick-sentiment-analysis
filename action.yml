@@ -1,0 +1,16 @@
+name: "Sentiment Analysis"
+
+description: "Analyze the sentiment of provided text."
+
+inputs:
+  text:
+    description: Text to analyze
+    required: true
+
+outputs:
+  result:
+    description: Sentiment analysis result
+
+runs:
+  using: "node16"
+  main: "main.js"

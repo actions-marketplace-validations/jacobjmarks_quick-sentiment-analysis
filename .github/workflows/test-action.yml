@@ -1,0 +1,36 @@
+name: "Test action"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  action-test-a:
+    name: Test action (positive sentiment)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Analyze sentiment
+        id: analyze-sentiment
+        uses: ./
+        with:
+          text: "I really love this action! :heart_eyes:"
+      - name: Get analysis result
+        run: echo '${{ steps.analyze-sentiment.outputs.result }}'
+
+  action-test-b:
+    name: Test action (negative sentiment)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Analyze sentiment
+        id: analyze-sentiment
+        uses: ./
+        with:
+          text: "This actions sucks! :vomiting_face:"
+      - name: Get analysis result
+        run: echo '${{ steps.analyze-sentiment.outputs.result }}'
