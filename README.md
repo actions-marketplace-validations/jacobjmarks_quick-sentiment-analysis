@@ -1,4 +1,4 @@
-# Sentiment Analysis
+# Quick Sentiment Analysis
 
 Utilise the [`sentiment`](https://www.npmjs.com/package/sentiment) module to analyze the sentiment of provided text.
 
