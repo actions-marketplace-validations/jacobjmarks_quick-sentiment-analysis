@@ -48,7 +48,7 @@ Result is formatted as JSON. Example:
 ## Example usage
 
 ``` yaml
-- uses: jacobjmarks/gha-javascript-action@v1.0.0
+- uses: jacobjmarks/quick-sentiment-analysis@v1.0.0
   id: sentiment-analysis
   with:
     text: "I love cats, but I am allergic to them."
